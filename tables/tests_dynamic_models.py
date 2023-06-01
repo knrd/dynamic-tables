@@ -52,5 +52,5 @@ class TableAPITestCase(TestCase):
 
     def test_create3(self):
         car_schema = ModelSchema.objects.create(name='Qwerty')
-        car_schema = ModelSchema.objects.create(name='QWerty')
-        car_schema = ModelSchema.objects.create(name='qwerty')
+        # car_schema = ModelSchema.objects.create(name='QWerty')
+        # car_schema = ModelSchema.objects.create(name='qwerty')

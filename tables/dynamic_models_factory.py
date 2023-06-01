@@ -7,18 +7,6 @@ from .exceptions import UnsavedSchemaError
 from .dynamic_models_editor import ModelRegistry
 
 
-class DynamicModelBase(models.base.ModelBase):
-    def __instancecheck__(cls, instance):
-        if issubclass(type(instance.__class__), DynamicModelBase):
-            return cls._class_descriptor(instance.__class__) == cls._class_descriptor(cls)
-
-        return super().__instancecheck__(instance)
-
-    @staticmethod
-    def _class_descriptor(class_):
-        return (class_.__module__, class_.__qualname__)
-
-
 class ModelFactory:
     def __init__(self, model_schema):
         self.schema = model_schema
@@ -32,7 +20,7 @@ class ModelFactory:
             )
 
         self.unregister_model()
-        return DynamicModelBase(self.schema.name, (models.Model,), self.get_properties())
+        return type(self.schema.name, (models.Model,), self.get_properties())
 
     def destroy_model(self):
         registered_model = self.get_registered_model()
