@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres:15.2
+    container_name: tableapp-postgres
+    # normally I would use here .env or secret storage
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=passwd123
+    ports:
+      - '15432:5432'
+    volumes:
+      - ./_pgdata:/var/lib/postgresql/data

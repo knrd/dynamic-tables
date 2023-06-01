@@ -1,0 +1,13 @@
+__pycache__
+*.pyc
+.idea
+
+/venv*
+.env
+
+experiments/tmp
+static/
+
+activate
+
+_pgdata/
