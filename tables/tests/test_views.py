@@ -30,6 +30,8 @@ class TableViewsEndToEndTestCase(TestCaseDynamicModels):
                 {
                     'name': 'field_number',
                     'field_type': 'number',
+                    # TODO: fix a bug
+                    # remove `null: True` arg to reveal a bug
                     'args': {'null': True, 'default': 1}
                 }
             ]
