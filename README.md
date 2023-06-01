@@ -1,3 +1,5 @@
+Based on https://github.com/rvinzent/django-dynamic-models, with bugfixes and simplifications
+
 # First run
 
 ```bash
@@ -28,6 +30,10 @@ docker compose up -d
 
 # Missing things
 
+- model args validation
+- model fields renaming (implemented but not available via views)
+- corner case validation in views
+- more granular tests
 - type hints
 - linting & black
 - dynamic_models*.py code could be simplified 

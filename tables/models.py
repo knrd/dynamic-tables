@@ -121,7 +121,7 @@ class FieldSchema(models.Model):
 
     @property
     def null(self):
-        return self.kwargs.get("null", True)
+        return self.kwargs.get("null", False)
 
     @null.setter
     def null(self, value):
